@@ -1,0 +1,148 @@
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container-fluid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><span class="label label-warning" id="qid"></span>{{quizzes.[0].topic}}</h3>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="login-group">
+                    <div class="Question1"><label>{{quizzes.[0].questiona}}</label></div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=canswera name="lecture2b">
+                        <label id=answera for=canswera>{{quizzes.[0].answera}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswera name="lecture2b">
+                        <label id=incorrectAnswera for=cincorrectAnswera>{{quizzes.[0].incorrectAnswer1a}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswer2a name="lecture2b">
+                        <label id=incorrectAnswer2a for=cincorrectAnswer2a>{{quizzes.[0].incorrectAnswer2a}}</label>
+                    </div>
+
+
+                    <div class="Question1"><label>{{quizzes.[0].questionb}}</label></div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswerb name="lecture2b">
+                        <label id=incorrectAnswerb for=cincorrectAnswerb>{{quizzes.[0].incorrectAnswer1b}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswer2b name="lecture2b">
+                        <label id=incorrectAnswer2b for=cincorrectAnswer2b>{{quizzes.[0].incorrectAnswer2b}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=canswerb name="lecture2b">
+                        <label id=answerb for=canswerb>{{quizzes.[0].answerb}}</label>
+                    </div>
+
+
+
+                    <div class="Question3"><label>{{quizzes.[0].questionc}}</label></div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswer2c name="lecture2b">
+                        <label id=incorrectAnswer2c for=cincorrectAnswer2c>{{quizzes.[0].incorrectAnswer2c}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswerc name="lecture2b">
+                        <label id=incorrectAnswerc for=cincorrectAnswerc>{{quizzes.[0].incorrectAnswer1c}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=canswerc name="lecture2b">
+                        <label id=answerc for=canswerc>{{quizzes.[0].answerc}}</label>
+                    </div>
+
+
+                    <div class="Question4"><label>{{quizzes.[0].questiond}}</label></div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswerd name="lecture2b">
+                        <label id=incorrectAnswerd for=cincorrectAnswerd>{{quizzes.[0].incorrectAnswer1d}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswer2d name="lecture2b">
+                        <label id=incorrectAnswer2d for=cincorrectAnswer2d>{{quizzes.[0].incorrectAnswer2d}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=canswerd name="lecture2b">
+                        <label id=answerd for=canswerd>{{quizzes.[0].answerd}}</label>
+                    </div>
+
+
+                    <div class="Question1"><label>{{quizzes.[0].questione}}</label></div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswer2e name="lecture2b">
+                        <label id=incorrectAnswer2e for=cincorrectAnswer2e>{{quizzes.[0].incorrectAnswer2e}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=canswere name="lecture2b">
+                        <label id=answere for=canswere>{{quizzes.[0].answere}}</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id=cincorrectAnswere name="lecture2b">
+                        <label id=incorrectAnswere for=cincorrectAnswere>{{quizzes.[0].incorrectAnswer1e}}</label>
+                    </div>
+
+
+
+                    <h1 id="demo"></h1>
+                </div>
+    <button name="bar" onclick="myFunction()">Mark Answers</button>
+
+
+
+
+
+
+                <script>
+
+
+function myFunction() {
+
+    document.getElementById('answera').style.color = "green";
+    document.getElementById('answerb').style.color = "green";
+    document.getElementById('answerc').style.color = "green";
+    document.getElementById('answerd').style.color = "green";
+    document.getElementById('answere').style.color = "green";
+
+    var x1 = document.getElementById("canswera").checked;
+    var x2 = document.getElementById('canswerb').checked;
+    var x3 = document.getElementById('canswerc').checked;
+    var x4 = document.getElementById('canswerd').checked;
+    var x5 = document.getElementById('canswere').checked;
+    let x = 0;
+    if (x1 == false){ ++x; }
+    if (x2 == false){ ++x; }
+    if (x3 == false){ ++x; }
+    if (x4 == false){ ++x; }
+    if (x5 == false){ ++x; }
+
+
+    var result = 5 - x;
+
+    document.getElementById("demo").innerHTML = "Your mark: " + result + " / 5";
+
+}
+
+
+</script>
+
+
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer text-muted">
+                <span id="answer"></span>
+            </div>
+        </div>
+    </div>
+</div>
+

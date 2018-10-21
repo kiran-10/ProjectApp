@@ -6768,4 +6768,12 @@ button.close {
   color: #333;
 }
 
+.invisibleDiv {
+    visibility: hidden;
+}
+
+.p.test {
+    background-color: green;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

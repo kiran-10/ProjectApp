@@ -15,7 +15,25 @@ var UserSchema = mongoose.Schema({
 	},
 	role: {
 		type: String
-	}
+	},
+	conceptMark: {
+	    type: Number
+	},
+	logicMark: {
+	    type: Number
+	},
+	probabilityMark: {
+    	type: Number
+    },
+    recursionMark: {
+    	type: Number
+    },
+    relationsMark: {
+    	type: Number
+    },
+    algebraMark: {
+    	type: Number
+    },
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

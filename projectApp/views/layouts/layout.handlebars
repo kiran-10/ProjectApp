@@ -26,7 +26,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/">COMP16121</a>
+        <a class="navbar-brand js-scroll-trigger" href="/">COMP11120</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,13 +34,14 @@
             <ul class="navbar-nav ml-auto">
 
            {{#equal user.role 'user'}}
+
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/slides">Resources</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/quizgame">Quiz Yourself</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/quizMenu">Quiz Yourself</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/discussion">Discussion</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/cardsMenu">Flashcards</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/logout">Logout</a></li>
            {{else}}{{#equal user.role 'admin'}}
-               <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/flashcards">Create Flashcards</a></li>
+               <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/addFlashcards">Create Flashcards</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/createQuiz">Create Quiz</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/logout">Logout</a></li>
 

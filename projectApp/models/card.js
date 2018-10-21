@@ -4,7 +4,7 @@ var bcrypt = require('bcryptjs');
 // User Schema
 var CardSchema = mongoose.Schema({
     set: {
-        type: Number,
+        type: String,
     },
 	question1: {
 		type: String,

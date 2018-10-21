@@ -15,7 +15,7 @@ var url = 'mongodb://localhost:27017/projectapp';
 var User = require('../models/user');
 var Card = require('../models/card');
 var Quiz = require('../models/quiz');
-
+var Mark = require('../models/mark');
 
 // Register
 router.get('/register', function (req, res) {
@@ -31,12 +31,9 @@ router.get('/slides', function (req, res) {
 	res.render('slides');
 });
 
-router.get('/quiz', function (req, res) {
-	res.render('quiz');
-});
 
-router.get('/flashcards', function (req, res) {
-	res.render('flashcards');
+router.get('/addFlashcards', function (req, res) {
+	res.render('addFlashcards');
 });
 
 router.get('/createQuiz', function (req, res) {
@@ -48,6 +45,9 @@ router.get('/cardsMenu', function (req, res) {
 });
 
 
+router.get('/profile', function(req, res){
+  res.render('profile', { username: req.user.username });
+});
 
 //insert flashcard
 router.post('/create-flashcard', function (req, res) {
@@ -82,12 +82,29 @@ var newCard = new Card({
 						console.log(card);
 					});
 					req.flash('success_msg', 'Flashcard added');
-                    					res.redirect('flashcards');
+                    					res.redirect('addFlashcards');
 
 
 
 
 });
+
+router.post('/submit-mark', function (req, res, next) {
+  var id = req.user.id;
+  var mark = req.body.mark;
+  console.log('HERE' + id);
+
+  User.findById(id, mark, function(err, doc) {
+    if (err) {
+      console.error('error, no entry found');
+    }
+    console.log(mark);
+    doc.conceptMark = mark;
+    doc.save();
+  })
+  res.redirect('/');
+});
+
 
 
 //insert quiz question
@@ -154,29 +171,37 @@ var newQuiz = new Quiz({
 
 
 
-router.get('/viewCards', function(req, res, next) {
+router.get('/cardsConcepts', function(req, res, next) {
 
 db.collection('cards').find().toArray((err, result) => {
     if (err) return console.log(err)
     // renders index.ejs
-    res.render('viewCards', {cards: result})
+    res.render('cardsConcepts', {cards: result})
   });
 });
 
-router.get('/viewCards1', function(req, res, next) {
+router.get('/cardsLogic', function(req, res, next) {
 
 db.collection('cards').find().toArray((err, result) => {
     if (err) return console.log(err)
     // renders index.ejs
-    res.render('viewCards1', {cards: result})
+    res.render('cardsLogic', {cards: result})
   });
 });
 
 
-router.get('/quizgame', function (req, res, next) {
+router.get('/quizConcepts', function (req, res, next) {
 db.collection('quizzes').find().toArray((err, result) => {
-	res.render('quizgame', {quizzes: result});
+	res.render('quizConcepts', {quizzes: result});
 	});
+});
+
+router.get('/quizMenu', function (req, res, next) {
+db.collection('marks').find().toArray((err, result) => {
+    if (err) return console.log(err)
+    // renders index.ejs
+    res.render('quizMenu', {marks: result})
+  });
 });
 
 //register user
@@ -187,9 +212,16 @@ router.post('/register', function (req, res) {
 	var password = req.body.password;
 	var password2 = req.body.password2;
 	var role = "user";
+	var conceptMark = 0;
+	var logicMark = 0;
+	var probabilityMark = 0;
+	var recursionMark = 0;
+	var relationsMark = 0;
+	var algebraMark = 0;
 
 
 	// Validation
+
 
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('email', 'Email is not valid').isEmail();
@@ -223,7 +255,13 @@ router.post('/register', function (req, res) {
 						email: email,
 						username: username,
 						password: password,
-						role: role
+						role: role,
+						conceptMark: conceptMark,
+						logicMark: logicMark,
+						probabilityMark: probabilityMark,
+						recursionMark: recursionMark,
+						relationsMark: relationsMark,
+						algebraMark: algebraMark
 					});
 					User.createUser(newUser, function (err, user) {
 						if (err) throw err;
@@ -237,6 +275,10 @@ router.post('/register', function (req, res) {
 		});
 	}
 });
+
+
+
+
 
 passport.use(new LocalStrategy(
 	function (username, password, done) {

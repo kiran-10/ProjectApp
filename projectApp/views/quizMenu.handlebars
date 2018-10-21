@@ -1,0 +1,54 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>p {
+    background-color: green;
+    width: 3%;
+    display: inline-block;
+}</style>
+</head>
+<body>
+
+
+<div class="container">
+    <h2>Quiz Yourself</h2>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1">Topics <i class="glyphicon glyphicon-chevron-down"></i></a>
+                </h4>
+
+
+
+            </div>
+            <div>
+                <ul class="list-group">
+
+                    <a href="/users/quizConcepts"><li class="list-group-item">Part 1 - Introduction to Concepts</a>
+                    <span class="badge badge-success">{{user.conceptMark}}%</span>
+                    </li>
+
+
+                    <li class="list-group-item">Part 2 - Formal Logic Systems<span class="badge badge-success">{{user.logicMark}}%</span></li>
+                    <li class="list-group-item">Part 3 - Probability<span class="badge badge-success">{{user.probabilityMark}}%</span></li>
+                    <li class="list-group-item">Part 4 - Recursion and Induction<span class="badge badge-success">{{user.recursionMark}}%</span></li>
+                    <li class="list-group-item">Part 5 - Relations<span class="badge badge-success">{{user.relationsMark}}%</span></li>
+                    <li class="list-group-item">Part 6 - Basic Linear Algebra<span class="badge badge-success">{{user.algebraMark}}%</span></li>
+                </ul>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+        </div>
+
+
+
+</body>

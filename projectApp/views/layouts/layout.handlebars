@@ -17,11 +17,13 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/creative.min.css" rel="stylesheet">
+
 </head>
 
 
 
 <body id="page-top">
+<div style="min-height: 100%">
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -37,11 +39,14 @@
 
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/slides">Resources</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/quizMenu">Quiz Yourself</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/discussion">Discussion</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/examplesMenu">Examples</a></li>
+               <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/progress">Progress</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/cardsMenu">Flashcards</a></li>
+
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/logout">Logout</a></li>
            {{else}}{{#equal user.role 'admin'}}
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/addFlashcards">Create Flashcards</a></li>
+               <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/addVideo">Upload Examples</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/createQuiz">Create Quiz</a></li>
                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users/logout">Logout</a></li>
 
@@ -83,11 +88,12 @@
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="/vendor/scrollreveal/scrollreveal.min.js"></script>
-<script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!--<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>-->
+<!--<script src="/vendor/scrollreveal/scrollreveal.min.js"></script>-->
+<!--<script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>-->
 
 <!-- Custom scripts for this template -->
-<script src="/js/creative.min.js"></script>
+<!--<script src="/js/creative.min.js"></script>-->
+</div>
 </body>
 </html>

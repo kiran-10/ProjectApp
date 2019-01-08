@@ -3467,12 +3467,7 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
-.fade {
-  opacity: 0;
-  -webkit-transition: opacity .15s linear;
-       -o-transition: opacity .15s linear;
-          transition: opacity .15s linear;
-}
+
 .fade.in {
   opacity: 1;
 }
@@ -5881,15 +5876,7 @@ button.close {
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
-.modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
-          transition:         transform .3s ease-out;
-  -webkit-transform: translate(0, -25%);
-      -ms-transform: translate(0, -25%);
-       -o-transform: translate(0, -25%);
-          transform: translate(0, -25%);
-}
+
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
@@ -5926,10 +5913,7 @@ button.close {
   z-index: 1040;
   background-color: #000;
 }
-.modal-backdrop.fade {
-  filter: alpha(opacity=0);
-  opacity: 0;
-}
+
 .modal-backdrop.in {
   filter: alpha(opacity=50);
   opacity: .5;
@@ -6455,7 +6439,7 @@ button.close {
   .carousel-caption {
     right: 20%;
     left: 20%;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
   .carousel-indicators {
     bottom: 20px;
@@ -6768,12 +6752,24 @@ button.close {
   color: #333;
 }
 
+.card{
+font-size: 2em;
+  margin:auto;
+  height: 24em;
+  line-height: 10em;
+  width: 30em;
+  vertical-align: middle;
+}
+
 .invisibleDiv {
     visibility: hidden;
 }
 
 .p.test {
     background-color: green;
+}
+.big-icon{
+    font-size:32px;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

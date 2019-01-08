@@ -7,93 +7,109 @@
 <div class="container-fluid">
     <div class="modal-dialog">
         <div class="modal-content">
+            <form id="create-quiz" method="post" action="/users/submit-mark-logic">
             <div class="modal-header">
-                <h3><span class="label label-warning" id="qid"></span>{{quizzes.[0].topic}}</h3>
+
+                <h3><span class="label label-warning" id="qid" name="qid"></span>{{quizzes.[1].topic}}</h3>
             </div>
             <div class="modal-body">
 
 
-                <div class="login-group">
-                    <div class="Question1"><label>{{quizzes.[0].questiona}}</label></div>
+                <div class="login-group"><font color="black" face="verdana">
+
+                    <div class="Question1"><label>{{quizzes.[1].questiona}}</label></div>
                     <div class="checkbox">
                         <input type="checkbox" id=canswera name="lecture2b">
-                        <label id=answera for=canswera>{{quizzes.[0].answera}}</label>
+                        <label id=answera for=canswera>{{quizzes.[1].answera}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswera name="lecture2b">
-                        <label id=incorrectAnswera for=cincorrectAnswera>{{quizzes.[0].incorrectAnswer1a}}</label>
+                        <label id=incorrectAnswera for=cincorrectAnswera>{{quizzes.[1].incorrectAnswer1a}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswer2a name="lecture2b">
-                        <label id=incorrectAnswer2a for=cincorrectAnswer2a>{{quizzes.[0].incorrectAnswer2a}}</label>
+                        <label id=incorrectAnswer2a for=cincorrectAnswer2a>{{quizzes.[1].incorrectAnswer2a}}</label>
                     </div>
+<br><br>
 
-
-                    <div class="Question1"><label>{{quizzes.[0].questionb}}</label></div>
+                    <div class="Question1"><label>{{quizzes.[1].questionb}}</label></div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswerb name="lecture2b">
-                        <label id=incorrectAnswerb for=cincorrectAnswerb>{{quizzes.[0].incorrectAnswer1b}}</label>
+                        <label id=incorrectAnswerb for=cincorrectAnswerb>{{quizzes.[1].incorrectAnswer1b}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswer2b name="lecture2b">
-                        <label id=incorrectAnswer2b for=cincorrectAnswer2b>{{quizzes.[0].incorrectAnswer2b}}</label>
+                        <label id=incorrectAnswer2b for=cincorrectAnswer2b>{{quizzes.[1].incorrectAnswer2b}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=canswerb name="lecture2b">
-                        <label id=answerb for=canswerb>{{quizzes.[0].answerb}}</label>
+                        <label id=answerb for=canswerb>{{quizzes.[1].answerb}}</label>
                     </div>
 
+<br><br>
 
-
-                    <div class="Question3"><label>{{quizzes.[0].questionc}}</label></div>
+                    <div class="Question3"><label>{{quizzes.[1].questionc}}</label></div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswer2c name="lecture2b">
-                        <label id=incorrectAnswer2c for=cincorrectAnswer2c>{{quizzes.[0].incorrectAnswer2c}}</label>
+                        <label id=incorrectAnswer2c for=cincorrectAnswer2c>{{quizzes.[1].incorrectAnswer2c}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswerc name="lecture2b">
-                        <label id=incorrectAnswerc for=cincorrectAnswerc>{{quizzes.[0].incorrectAnswer1c}}</label>
+                        <label id=incorrectAnswerc for=cincorrectAnswerc>{{quizzes.[1].incorrectAnswer1c}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=canswerc name="lecture2b">
-                        <label id=answerc for=canswerc>{{quizzes.[0].answerc}}</label>
+                        <label id=answerc for=canswerc>{{quizzes.[1].answerc}}</label>
                     </div>
 
-
-                    <div class="Question4"><label>{{quizzes.[0].questiond}}</label></div>
+<br><br>
+                    <div class="Question4"><label>{{quizzes.[1].questiond}}</label></div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswerd name="lecture2b">
-                        <label id=incorrectAnswerd for=cincorrectAnswerd>{{quizzes.[0].incorrectAnswer1d}}</label>
+                        <label id=incorrectAnswerd for=cincorrectAnswerd>{{quizzes.[1].incorrectAnswer1d}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswer2d name="lecture2b">
-                        <label id=incorrectAnswer2d for=cincorrectAnswer2d>{{quizzes.[0].incorrectAnswer2d}}</label>
+                        <label id=incorrectAnswer2d for=cincorrectAnswer2d>{{quizzes.[1].incorrectAnswer2d}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=canswerd name="lecture2b">
-                        <label id=answerd for=canswerd>{{quizzes.[0].answerd}}</label>
+                        <label id=answerd for=canswerd>{{quizzes.[1].answerd}}</label>
                     </div>
+<br><br>
 
-
-                    <div class="Question1"><label>{{quizzes.[0].questione}}</label></div>
+                    <div class="Question1"><label>{{quizzes.[1].questione}}</label></div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswer2e name="lecture2b">
-                        <label id=incorrectAnswer2e for=cincorrectAnswer2e>{{quizzes.[0].incorrectAnswer2e}}</label>
+                        <label id=incorrectAnswer2e for=cincorrectAnswer2e>{{quizzes.[1].incorrectAnswer2e}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=canswere name="lecture2b">
-                        <label id=answere for=canswere>{{quizzes.[0].answere}}</label>
+                        <label id=answere for=canswere>{{quizzes.[1].answere}}</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id=cincorrectAnswere name="lecture2b">
-                        <label id=incorrectAnswere for=cincorrectAnswere>{{quizzes.[0].incorrectAnswer1e}}</label>
+                        <label id=incorrectAnswere for=cincorrectAnswere>{{quizzes.[1].incorrectAnswer1e}}</label>
+                    </div>
+<br>
+
+
+                    <h1 id="mark1" name="mark1" value=""></h1>
+                    <div class="invisibleDiv" style="display: none;">
+                        <input type="text" class="form-control" id="topic" name="topic" placeholder="mark1">
+
+
+
+                        <input type="text" class="btn btn-primary btn-xl js-scroll-trigger" id="mark" name="mark" placeholder="mark">
                     </div>
 
+                    <button type="submit" class="btn btn-primary btn-xl js-scroll-trigger">Submit</button>
 
 
-                    <h1 id="demo"></h1>
-                </div>
-    <button name="bar" onclick="myFunction()">Mark Answers</button>
+                </font></div>
+
+
+
 
 
 
@@ -125,19 +141,20 @@ function myFunction() {
 
 
     var result = 5 - x;
+    var resultPer = ( result / 5 ) * 100;
 
-    document.getElementById("demo").innerHTML = "Your mark: " + result + " / 5";
-
+    document.getElementById("mark1").innerHTML = "Your mark: " + result + " / 5";
+document.querySelector('[name="mark"]').value = resultPer;
+document.querySelector('[name="topic"]').value = 'concepts';
 }
 
 
 </script>
 
 
-
-
-
                 </div>
+            </form>
+            <button name="bar" onclick="myFunction()">Mark Answers</button>
             </div>
             <div class="modal-footer text-muted">
                 <span id="answer"></span>

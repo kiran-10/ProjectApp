@@ -16,11 +16,14 @@ var User = require('../models/user');
 var Card = require('../models/card');
 var Quiz = require('../models/quiz');
 var Mark = require('../models/mark');
-
+var Video = require('../models/video');
+var ConceptHistory = require('../models/conceptHistory');
+var current = 0;
 // Register
 router.get('/register', function (req, res) {
 	res.render('register');
 });
+
 
 // Login
 router.get('/login', function (req, res) {
@@ -36,6 +39,10 @@ router.get('/addFlashcards', function (req, res) {
 	res.render('addFlashcards');
 });
 
+router.get('/addVideo', function (req, res) {
+	res.render('addVideo');
+});
+
 router.get('/createQuiz', function (req, res) {
 	res.render('createQuiz');
 });
@@ -44,10 +51,20 @@ router.get('/cardsMenu', function (req, res) {
 	res.render('cardsMenu');
 });
 
+router.get('/examplesMenu', function (req, res) {
+	res.render('examplesMenu');
+});
+
+
+router.get('/probabilityVideoMenu', function (req, res) {
+	res.render('probabilityVideoMenu');
+});
 
 router.get('/profile', function(req, res){
   res.render('profile', { username: req.user.username });
 });
+
+
 
 //insert flashcard
 router.post('/create-flashcard', function (req, res) {
@@ -92,19 +109,65 @@ var newCard = new Card({
 router.post('/submit-mark', function (req, res, next) {
   var id = req.user.id;
   var mark = req.body.mark;
-  console.log('HERE' + id);
+  var username = req.user.username;
+
 
   User.findById(id, mark, function(err, doc) {
     if (err) {
       console.error('error, no entry found');
     }
-    console.log(mark);
+
     doc.conceptMark = mark;
     doc.save();
   })
-  res.redirect('/');
+
+
+  res.redirect('quizMenu');
 });
 
+router.post('/submit-mark-logic', function (req, res, next) {
+  var id = req.user.id;
+  var mark = req.body.mark;
+  var username = req.user.username;
+
+
+  User.findById(id, mark, function(err, doc) {
+    if (err) {
+      console.error('error, no entry found');
+    }
+
+    doc.logicMark = mark;
+    doc.save();
+  })
+
+
+  res.redirect('quizMenu');
+});
+
+
+
+
+router.post('/add-video', function (req, res, next) {
+  var question = req.body.question;
+  var answer = req.body.answer;
+  var file = req.body.myFile;
+  var newVideo = new Video({
+                        question: question,
+						answer: answer,
+						file: file,
+					});
+
+					Video.createVideo(newVideo, function (err, video) {
+						if (err) throw err;
+						console.log(video);
+					});
+					req.flash('success_msg', 'Video added');
+                    					res.redirect('addVideo');
+
+
+
+
+});
 
 
 //insert quiz question
@@ -180,6 +243,28 @@ db.collection('cards').find().toArray((err, result) => {
   });
 });
 
+router.get('/exampleVideo', function (req, res, next) {
+db.collection('videos').find().toArray((err, result) => {
+    if (err) return console.log(err)
+    res.render('exampleVideo', {videos: result})
+  });
+});
+
+router.get('/videoConcept', function (req, res, next) {
+db.collection('videos').find().toArray((err, result) => {
+    if (err) return console.log(err)
+    res.render('videoConcept', {videos: result})
+  });
+});
+
+router.get('/progress', function(req, res, next){
+db.collection('marks').find().toArray((err, result) => {
+    if (err) return console.log(err)
+    // renders index.ejs
+    res.render('progress', {marks: result})
+});
+});
+
 router.get('/cardsLogic', function(req, res, next) {
 
 db.collection('cards').find().toArray((err, result) => {
@@ -193,6 +278,12 @@ db.collection('cards').find().toArray((err, result) => {
 router.get('/quizConcepts', function (req, res, next) {
 db.collection('quizzes').find().toArray((err, result) => {
 	res.render('quizConcepts', {quizzes: result});
+	});
+});
+
+router.get('/quizLogic', function (req, res, next) {
+db.collection('quizzes').find().toArray((err, result) => {
+	res.render('quizLogic', {quizzes: result});
 	});
 });
 
@@ -218,6 +309,12 @@ router.post('/register', function (req, res) {
 	var recursionMark = 0;
 	var relationsMark = 0;
 	var algebraMark = 0;
+	var mark0 = 0;
+	var mark1 = 0;
+	var mark2 = 0;
+    var mark3 = 0;
+    var mark4 = 0;
+    var mark5 = 0;
 
 
 	// Validation
@@ -268,7 +365,24 @@ router.post('/register', function (req, res) {
 						console.log(user);
 					});
 
-         	req.flash('success_msg', 'flashcard saved');
+
+
+         	//add histories
+         	var newConceptHistory = new ConceptHistory({
+
+            						username: username,
+            						mark0: mark0,
+            						mark1: mark1,
+            						mark2: mark2,
+            					});
+            					ConceptHistory.createConceptHistory(newConceptHistory, function (err, conceptHistory) {
+            						if (err) throw err;
+                                    console.log(conceptHistory);
+            					});
+
+
+
+                    req.flash('success_msg', 'flashcard saved');
 					res.redirect('/users/login');
 				}
 			});

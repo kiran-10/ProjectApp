@@ -1,0 +1,34 @@
+
+
+
+<div class="container-fluid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="create-quiz" method="post" action="/users/add-video">
+                <div class="modal-header">
+
+                    <h3><span class="label label-warning" id="qid" name="qid"></span>Upload Example</h3>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="question" class="sr-only">Question</label>
+                        <input type="question" class="form-control" id="question" name="question" placeholder="Question">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="answer" class="sr-only">Answer</label>
+                        <input type="answer" class="form-control" id="answer" name="answer" placeholder="Answer">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="answer" class="sr-only">Answer</label>
+                        <input name="myFile" type="file" id="myFile" >
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-xl js-scroll-trigger">Submit</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

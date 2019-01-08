@@ -1,12 +1,20 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<style>p {
-    background-color: green;
-    width: 3%;
-    display: inline-block;
-}</style>
+
+<style>
+
+    .badge-success{
+    color:#fff;
+    background-color:#28a745;
+    }
+
+    .badge-warning{
+color:#212529;
+background-color:#ffc107
+}
+</style>
 </head>
-<body>
+<body onload="myFunction()">
 
 
 <div class="container">
@@ -24,16 +32,12 @@
             <div>
                 <ul class="list-group">
 
-                    <a href="/users/quizConcepts"><li class="list-group-item">Part 1 - Introduction to Concepts</a>
-                    <span class="badge badge-success">{{user.conceptMark}}%</span>
-                    </li>
-
-
-                    <li class="list-group-item">Part 2 - Formal Logic Systems<span class="badge badge-success">{{user.logicMark}}%</span></li>
-                    <li class="list-group-item">Part 3 - Probability<span class="badge badge-success">{{user.probabilityMark}}%</span></li>
-                    <li class="list-group-item">Part 4 - Recursion and Induction<span class="badge badge-success">{{user.recursionMark}}%</span></li>
-                    <li class="list-group-item">Part 5 - Relations<span class="badge badge-success">{{user.relationsMark}}%</span></li>
-                    <li class="list-group-item">Part 6 - Basic Linear Algebra<span class="badge badge-success">{{user.algebraMark}}%</span></li>
+                    <a href="/users/quizConcepts"><li class="list-group-item" id="item1">Part 1 - Introduction to Concepts</a></li>
+                    <a href="/users/quizLogic"><li id="item2" name="item2" class="list-group-item">Part 2 - Formal Logic Systems</a></li>
+                    <li class="list-group-item">Part 3 - Probability</li>
+                    <li class="list-group-item">Part 4 - Recursion and Induction</li>
+                    <li class="list-group-item">Part 5 - Relations</li>
+                    <li class="list-group-item">Part 6 - Basic Linear Algebra</li>
                 </ul>
 
 
@@ -45,10 +49,20 @@
     </div>
 
 </div>
-
-
         </div>
 
+<script>
 
+
+    function myFunction() {
+
+
+
+ document.getElementById("badge1").className = "badge badge-warning";
+
+
+
+}
+</script>
 
 </body>

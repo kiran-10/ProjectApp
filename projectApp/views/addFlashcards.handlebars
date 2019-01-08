@@ -6,78 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 </head>
 <body>
 
-<!-- REGISTRATION FORM -->
-<div class="text-center" style="padding:50px 0">
-    <font face="verdana"><div class="logo" >Add Flashcards</div></font>
-    <!-- Main Form -->
-    <div class="flashcard-form">
-        <form id="create-flashcard" method="post" action="/users/create-flashcard">
-            <div class="another">
-                <div class="form-group">
-                    <label for="set">Please enter set</label>
-                    <select class="form-control" id="set">
-                        <option>Introduction to Concepts</option>
-                        <option>Logic</option>
-                        <option>Probability</option>
-                        <option>Recursion</option>
-                        <option>Relations</option>
-                        <option>Algebra</option>
-                    </select>
-                </div>
-                    <div class="form-group">
-                        <label for="question1" class="sr-only">Please enter question 1:</label>
-                        <font face="verdana"><input type="text" size="80"  id="question1" name="question1" placeholder="question"></font>
-                    </div>
-                    <div class="form-group">
-                        <label for="answer1" class="sr-only">Please enter answer 1:</label>
-                        <font face="verdana"><input type="text" size="80"  id="answer1" name="answer1" placeholder="answer"></font>
+
+         <div class="container-fluid">
+             <div class="modal-dialog">
+                 <div class="modal-content">
+
+                     <form id="flashcard" method="post" action="/users/create-flashcard">
+                         <div class="modal-header"><h3><span class="label label-warning" id="qid" name="qid"></span>Add Flashcard</h3>
+                         </div>
+                         <div class="modal-body">
+
+
+
+                             <div class="form-group">
+                                 <label for="topic" class="sr-only">Please enter topic:</label>
+                                 <font face="verdana"><input type="text" class="form-control" size="80" id="topic" name="topic" placeholder="Enter Topic"></font>
+                             </div>
+                             <br><br>
+                                <div class="form-group">
+                                    <font face="verdana"><input type="Question" class="form-control" id="Question" name="password" placeholder="Question"></font>
+                                </div>
+                                <div class="form-group">
+                        <font face="verdana"><input type="text" class="form-control" id="answer1" name="answer1" placeholder="Answer"></font>
                     </div>
                     <br><br>
-                    <div class="form-group">
-                        <label for="question2" class="sr-only">Please enter question 2:</label>
-                        <font face="verdana"> <input type="text" size="80"  id="question2" name="question2" placeholder="question"></font>
+
+
+
+                         <div class="form-group">
+                             <font face="verdana"><input type="Question" class="form-control" id="question2" name="question2" placeholder="Question"></font>
                     </div>
                     <div class="form-group">
                         <label for="answer2" class="sr-only">Please enter answer 2:</label>
-                        <font face="verdana"> <input type="text" size="80"  id="answer2" name="answer2" placeholder="answer"></font>
+                        <font face="verdana"> <input type="text" size="80"  class="form-control"id="answer2" name="answer2" placeholder="Answer"></font>
                     </div>
                     <br><br>
                     <div class="form-group">
                         <label for="question3" class="sr-only">Please enter question 3:</label>
-                        <font face="verdana"><input type="text" size="80" id="question3" name="question3" placeholder="question"></font>
+                        <font face="verdana"><input type="text" size="80" class="form-control" id="question3" name="question3" placeholder="Question"></font>
                     </div>
                     <div class="form-group">
                         <label for="answer3" class="sr-only">Please enter answer 3:</label>
-                        <font face="verdana"><input type="text" size="80" id="answer3" name="answer3" placeholder="answer"></font>
+                        <font face="verdana"><input type="text" size="80" class="form-control"id="answer3" name="answer3" placeholder="Answer"></font>
                     </div>
                     <br><br>
                     <div class="form-group">
                         <label for="question4" class="sr-only">Please enter question 4:</label>
-                        <font face="verdana"><input type="text" size="80" id="question4" name="question4" placeholder="question"></font>
+                        <font face="verdana"><input type="text" size="80" class="form-control"id="question4" name="question4" placeholder="Question"></font>
                     </div>
                     <div class="form-group">
                         <label for="answer4" class="sr-only">Please enter answer 4:</label>
-                        <font face="verdana"><input type="text" size="80" id="answer4" name="answer4" placeholder="answer"></font>
+                        <font face="verdana"><input type="text" size="80" class="form-control"id="answer4" name="answer4" placeholder="Answer"></font>
                     </div>
                     <br><br>
                     <div class="form-group">
                         <label for="question5" class="sr-only">Please enter question 5:</label>
-                        <font face="verdana"><input type="text" size="80" id="question5" name="question5" placeholder="question"></font>
+                        <font face="verdana"><input type="text" size="80" class="form-control"id="question5" name="question5" placeholder="Question"></font>
                     </div>
                     <div class="form-group">
                         <label for="answer5" class="sr-only">Please enter answer 5:</label>
-                        <font face="verdana"> <input type="text" size="80" id="answer5" name="answer5" maxlength="10" placeholder="answer"></font>
+                        <font face="verdana"> <input type="text" size="80" class="form-control"id="answer5" name="answer5" maxlength="10" placeholder="Answer"></font>
                     </div>
 
 
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                             <button type="submit" class="btn btn-primary btn-xl js-scroll-trigger">Submit</button>
 
-            </div>
+                         </div>
+
         </form>
+                        </div>
+                    </div>
 
     <!-- end:Main Form -->
 </div>

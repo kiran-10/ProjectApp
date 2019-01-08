@@ -1,0 +1,109 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+         ['Topic', 'Score', { role: 'style' }],
+         ['Concepts', {{user.conceptMark}}, '#b87333'],
+         ['Logic', {{user.logicMark}}, '#b87333'],
+         ['Recursion', {{user.recursionMark}}, '#b87333'],
+         ['Relations', {{user.relationsMark}}, '#b87333'],
+         ['Probability', {{user.probabilityMark}}, '#b87333'],
+         ['Algebra', {{user.algebraMark}}, '#b87333'],
+
+
+      ]);
+
+      var options = {
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+    <style>
+.btn  {
+  float: right;
+}
+
+    .badge-success{
+    color:#fff;
+    background-color:#28a745;
+    }
+
+    .badge-warning{
+color:#212529;
+background-color:#ffc107
+}
+</style>
+</head>
+
+<!--instead of showing last 3, just show your scores. like a bar chart of the diff topics. aim to get all at 100-->
+
+
+
+<div >
+<div class="panel-group">
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a >Your Results</a>
+        </h4>
+    </div>
+    <div id="collapse1">
+        <div class="panel-body">
+
+            <ul>
+                <h4><li>Concept: <span class="badge badge-success">{{user.conceptMark}}%</span></li></h4>
+                <h4><li>Logic: <span class="badge badge-success">{{user.logicMark}}%</span></li></h4>
+                <h4><li>Probability: <span class="badge badge-success">{{user.probabilityMark}}%</span></li></h4>
+                <h4><li>Recursion: <span class="badge badge-success">{{user.recursionMark}}%</span></li></h4>
+                <h4><li>Relations: <span class="badge badge-success">{{user.relationsMark}}%</span></li></h4>
+                <h4><li>Algebra: <span class="badge badge-success">{{user.algebraMark}}%</span></li></h4>
+            </ul>
+
+            <button onclick="myFunction()" class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Generate Chart</button>
+        </div>
+    </div>
+</div>
+</div>
+    <div id="chart_div"></div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+function myFunction() {
+var curve_chart = document.getElementById("curve_chart");
+curve_chart.style.visibility = (
+       curve_chart.style.visibility == "hidden" ? "visible" : "hidden");
+}
+</script>
+</html>

@@ -10,104 +10,108 @@
 </head>
 <body>
 
-<!-- REGISTRATION FORM -->
-<div class="text-center" style="padding:50px 0">
-    <div class="logo">Create Quiz</div>
-    <!-- Main Form -->
-    <div class="flashcard-form">
-        <form id="create-quiz" method="post" action="/users/create-quiz">
+<div class="container-fluid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form id="flashcard" method="post" action="/users/create-quiz">
+                <div class="modal-header"><h3><span class="label label-warning" id="qid" name="qid"></span>Add Quiz</h3>
+                </div>
+                <div class="modal-body">
+
             <div class="form-group">
                 <label for="topic" class="sr-only">Please enter topic:</label>
-                <font face="verdana"><input type="text"  size="80" id="topic" name="topic" placeholder="Enter Topic"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="topic" name="topic" placeholder="Enter Topic"></font>
             </div>
+                    <br><br>
                     <div class="form-group">
                         <label for="question" class="sr-only">Please enter question 1:</label>
-                        <font face="verdana"><input type="text"  size="80" id="questiona" name="questiona" placeholder="Enter Question"></font>
+                        <font face="verdana"><input type="text"  class="form-control" size="80" id="questiona" name="questiona" placeholder="Enter Question"></font>
                     </div>
                     <div class="form-group">
                         <label for="answer" class="sr-only">Please enter correct answer 1:</label>
-                        <font face="verdana"><input type="text"  size="80"id="answera" name="answera" placeholder="Enter correct answer"></font>
+                        <font face="verdana"><input type="text" class="form-control" size="80"id="answera" name="answera" placeholder="Enter correct answer"></font>
                     </div>
                     <div class="form-group">
                         <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                        <font face="verdana"><input type="text"  size="80"id="incorrectAnswer1a" name="incorrectAnswer1a" placeholder="Enter incorrect answer"></font>
+                        <font face="verdana"><input type="text"  class="form-control" size="80"id="incorrectAnswer1a" name="incorrectAnswer1a" placeholder="Enter incorrect answer"></font>
                     </div>
                     <div class="form-group">
                         <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                        <font face="verdana"><input type="text" size="80" id="incorrectAnswer2a" name="incorrectAnswer2a" placeholder="Enter incorrect answer"></font>
+                        <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer2a" name="incorrectAnswer2a" placeholder="Enter incorrect answer"></font>
                     </div>
 
                     <br><br>
                     <div class="form-group">
                         <label for="question" class="sr-only">Please enter question 1:</label>
-                        <font face="verdana"><input type="text" size="80" id="questionb" name="questionb" placeholder="Enter Question"></font>
+                        <font face="verdana"><input type="text" class="form-control" size="80" id="questionb" name="questionb" placeholder="Enter Question"></font>
                     </div>
                     <div class="form-group">
                         <label for="answer" class="sr-only">Please enter correct answer 1:</label>
-                        <font face="verdana"><input type="text" size="80" id="answerb" name="answerb" placeholder="Enter correct answer"></font>
+                        <font face="verdana"><input type="text" class="form-control" size="80" id="answerb" name="answerb" placeholder="Enter correct answer"></font>
                     </div>
                     <div class="form-group">
                         <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                        <font face="verdana"><input type="text" size="80" id="incorrectAnswer1b" name="incorrectAnswer1b" placeholder="Enter incorrect answer"></font>
+                        <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer1b" name="incorrectAnswer1b" placeholder="Enter incorrect answer"></font>
                     </div>
                     <div class="form-group">
                         <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                        <font face="verdana"><input type="text" size="80" id="incorrectAnswer2b" name="incorrectAnswer2b" placeholder="Enter incorrect answer"></font>
+                        <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer2b" name="incorrectAnswer2b" placeholder="Enter incorrect answer"></font>
                     </div>
                     <br><br>
 
             <div class="form-group">
                 <label for="question" class="sr-only">Please enter question 1:</label>
-                <font face="verdana"><input type="text" size="80" id="questionc" name="questionc" placeholder="Enter Question"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="questionc" name="questionc" placeholder="Enter Question"></font>
             </div>
             <div class="form-group">
                 <label for="answer" class="sr-only">Please enter correct answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="answerc" name="answerc" placeholder="Enter correct answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="answerc" name="answerc" placeholder="Enter correct answer"></font>
             </div>
             <div class="form-group">
                 <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="incorrectAnswer1c" name="incorrectAnswer1c" placeholder="Enter incorrect answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer1c" name="incorrectAnswer1c" placeholder="Enter incorrect answer"></font>
             </div>
             <div class="form-group">
                 <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                <font face="verdana"><input type="text"size="80"  id="incorrectAnswer2c" name="incorrectAnswer2c" placeholder="Enter incorrect answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80"  id="incorrectAnswer2c" name="incorrectAnswer2c" placeholder="Enter incorrect answer"></font>
             </div>
             <br><br>
 
 
             <div class="form-group">
                 <label for="question" class="sr-only">Please enter question 1:</label>
-                <font face="verdana"><input type="text" size="80" id="questiond" name="questiond" placeholder="Enter Question"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="questiond" name="questiond" placeholder="Enter Question"></font>
             </div>
             <div class="form-group">
                 <label for="answer" class="sr-only">Please enter correct answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="answerd" name="answerd" placeholder="Enter correct answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="answerd" name="answerd" placeholder="Enter correct answer"></font>
             </div>
             <div class="form-group">
                 <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="incorrectAnswer1d" name="incorrectAnswer1d" placeholder="Enter incorrect answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer1d" name="incorrectAnswer1d" placeholder="Enter incorrect answer"></font>
             </div>
             <div class="form-group">
                 <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="incorrectAnswer2d" name="incorrectAnswer2d" placeholder="Enter incorrect answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer2d" name="incorrectAnswer2d" placeholder="Enter incorrect answer"></font>
             </div>
             <br><br>
 
             <div class="form-group">
                 <label for="question" class="sr-only">Please enter question 1:</label>
-                <font face="verdana"><input type="text" size="80" id="questione" name="questione" placeholder="Enter Question"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="questione" name="questione" placeholder="Enter Question"></font>
             </div>
             <div class="form-group">
                 <label for="answer" class="sr-only">Please enter correct answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="answere" name="answere" placeholder="Enter correct answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="answere" name="answere" placeholder="Enter correct answer"></font>
             </div>
             <div class="form-group">
                 <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="incorrectAnswer1e" name="incorrectAnswer1e" placeholder="Enter incorrect answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer1e" name="incorrectAnswer1e" placeholder="Enter incorrect answer"></font>
             </div>
             <div class="form-group">
                 <label for="incorrectAnswer2" class="sr-only">Please enter incorrect answer 1:</label>
-                <font face="verdana"><input type="text" size="80" id="incorrectAnswer2e" name="incorrectAnswer2e" placeholder="Enter incorrect answer"></font>
+                <font face="verdana"><input type="text" class="form-control" size="80" id="incorrectAnswer2e" name="incorrectAnswer2e" placeholder="Enter incorrect answer"></font>
             </div>
             <br><br>
 
@@ -115,12 +119,14 @@
 
 
 
-
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
-
+                    <button type="submit" class="btn btn-primary btn-xl js-scroll-trigger">Submit</button>
+                <!--<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>-->
+                </div>
         </form>
 
     <!-- end:Main Form -->
+</div>
+</div>
 </div>
 
 </body>
